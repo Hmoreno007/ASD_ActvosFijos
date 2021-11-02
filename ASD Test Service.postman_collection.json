@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "2d456b91-8c2d-4f7e-836c-cc6255b450e5",
+		"name": "ASD Test Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "obtenerActivosFiltro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dirlocal}}/obtenerActivosFijos?tipo={{tipo}}&fechaCompra={{fechaCompra}}&serial={{serial}}",
+					"host": [
+						"{{dirlocal}}"
+					],
+					"path": [
+						"obtenerActivosFijos"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "{{tipo}}"
+						},
+						{
+							"key": "fechaCompra",
+							"value": "{{fechaCompra}}"
+						},
+						{
+							"key": "serial",
+							"value": "{{serial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crea-Actualiza Activos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activoNombre\": \"Monitor\",\r\n    \"descripcion\": \"Monitor para oficina de uso laboral\",\r\n    \"tipo\": \"ArtOficina\",\r\n    \"activoSerial\": \"020000\",\r\n    \"numIntInventario\": \"15\",\r\n    \"peso\": 40,\r\n    \"alto\": 156.8,\r\n    \"ancho\": 165.0,\r\n    \"largo\": 240.9,\r\n    \"valorCompra\": 1200000,\r\n    \"estado\": \"Activo\",\r\n    \"fechaHoraCompra\": \"2021-10-31T05:00:00.000+00:00\",\r\n    \"fechaHoraCrea\": \"2020-01-01T15:10:10.000+00:00\",\r\n    \"fechaHoraModifica\": \"2021-10-31T06:33:47.751+00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{dirlocal}}/activosFijos",
+					"host": [
+						"{{dirlocal}}"
+					],
+					"path": [
+						"activosFijos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dirlocal",
+			"value": "http://localhost:8080/asd"
+		},
+		{
+			"key": "fechaCompra",
+			"value": "2021-10-31 00:00:00.000000"
+		},
+		{
+			"key": "tipo",
+			"value": "ArtOficina"
+		},
+		{
+			"key": "serial",
+			"value": "019999"
+		}
+	]
+}
